@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishwajeet Vilas Jadhav | MCA Student & Software Developer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'blob': 'blob 10s infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -40px) scale(1.08)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#070B14] dark:text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300 overflow-x-hidden">
+
+  <!-- Ambient Animated Gradient Mesh Background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-5%] w-[36rem] h-[36rem] rounded-full bg-indigo-500/15 dark:bg-indigo-600/15 blur-3xl animate-blob"></div>
+    <div class="absolute top-[30%] right-[-10%] w-[32rem] h-[32rem] rounded-full bg-cyan-500/15 dark:bg-cyan-500/10 blur-3xl animate-blob" style="animation-delay: 3s;"></div>
+    <div class="absolute bottom-[-10%] left-[25%] w-[30rem] h-[30rem] rounded-full bg-violet-500/15 dark:bg-violet-600/10 blur-3xl animate-blob" style="animation-delay: 6s;"></div>
+    <!-- Subtle Grid Overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:28px_28px]"></div>
+  </div>
+
+  <!-- =========================================================
+       1. NAVIGATION BAR
+  ========================================================= -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-40 transition-all duration-300 border-b border-transparent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Brand Logo / Initials -->
+      <a href="#top" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-500 to-cyan-500 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full rounded-[10px] bg-white dark:bg-[#0B1120] flex items-center justify-center font-mono font-bold text-base tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-400">
+            VJ
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <span class="font-bold tracking-tight text-slate-900 dark:text-white text-sm block leading-none">Vishwajeet Jadhav</span>
+          <span class="font-mono text-[11px] text-slate-500 dark:text-slate-400">dev.portfolio</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 bg-white/70 dark:bg-slate-900/60 backdrop-blur-md px-2 py-1.5 rounded-full border border-slate-200/80 dark:border-slate-800/80 shadow-sm">
+        <a href="#about" class="nav-link px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors">About</a>
+        <a href="#skills" class="nav-link px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="nav-link px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors">Projects</a>
+        <a href="#certifications" class="nav-link px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors">Certifications</a>
+        <a href="#contact" class="nav-link px-4 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Controls: Theme Toggle & Mobile Menu Button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button id="themeToggle" aria-label="Toggle Light/Dark Theme" class="p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-indigo-500/50 hover:text-indigo-500 transition-all shadow-sm">
+          <i id="themeIcon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
+
+        <button id="resumeQuickBtn" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition-all shadow-sm">
+          <i class="fa-regular fa-file-lines"></i>
+          <span>Resume</span>
+        </button>
+
+        <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2.5 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 dark:bg-[#0B1120]/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-5 space-y-1 shadow-xl">
+      <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60">About & Education</a>
+      <a href="#skills" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60">Technical & Soft Skills</a>
+      <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60">Featured Projects</a>
+      <a href="#certifications" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60">Certifications & Badges</a>
+      <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/60">Contact</a>
+      <div class="pt-2 px-2">
+        <button id="mobileResumeBtn" class="w-full py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-md">
+          <i class="fa-regular fa-file-lines mr-2"></i>Preview / Print Resume
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="pt-24 sm:pt-32">
+
+    <!-- =========================================================
+         2. HERO SECTION
+    ========================================================= -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 sm:pt-12 sm:pb-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-600 dark:text-indigo-300 text-xs font-mono font-medium">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Seeking Internships & Entry-Level Software Roles</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+            Hi, I’m <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-400">Vishwajeet Vilas Jadhav</span>
+          </h1>
+
+          <h2 class="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-200">
+            Master of Computer Applications (MCA) Student & Software Developer
+          </h2>
+
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Dedicated MCA student proficient in Java, Python, and modern web development, with practical experience building interactive web applications leveraging Cloud AI tools. Seeking internship or entry-level software development opportunities.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 hover:brightness-110 shadow-lg shadow-indigo-500/25 transition-all">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white/80 dark:bg-slate-900/80 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition-all shadow-sm">
+              <i class="fa-regular fa-paper-plane text-indigo-500"></i>
+              <span>Contact Me</span>
+            </a>
+            <button id="heroResumeBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl font-semibold text-sm bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition-all shadow-sm">
+              <i class="fa-regular fa-file-pdf text-indigo-500"></i>
+              <span>Resume</span>
+            </button>
+          </div>
+
+          <!-- Social Links -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-400 mr-1">Connect:</span>
+            <a href="https://github.com/vishvajeetjadhav2812-sketch" target="_blank" rel="noopener noreferrer" aria-label="GitHub - vishvajeetjadhav2812-sketch" title="GitHub (@vishvajeetjadhav2812-sketch)" class="w-10 h-10 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-indigo-500 hover:border-indigo-500/50 hover:-translate-y-0.5 transition-all">
+              <i class="fa-brands fa-github text-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/vishvajeet-jadhav-836868397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-10 h-10 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sky-500 hover:border-sky-500/50 hover:-translate-y-0.5 transition-all">
+              <i class="fa-brands fa-linkedin-in text-lg"></i>
+            </a>
+            <a href="https://instagram.com/vishwajeet_jadhav_06" target="_blank" rel="noopener noreferrer" aria-label="Instagram - @vishwajeet_jadhav_06" title="Instagram (@vishwajeet_jadhav_06)" class="w-10 h-10 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-pink-500 hover:border-pink-500/50 hover:-translate-y-0.5 transition-all">
+              <i class="fa-brands fa-instagram text-lg"></i>
+            </a>
+            <a href="mailto:vishvajeetjadhav2812@gmail.com" aria-label="Email Vishwajeet" title="vishvajeetjadhav2812@gmail.com" class="w-10 h-10 rounded-xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:border-emerald-500/50 hover:-translate-y-0.5 transition-all">
+              <i class="fa-regular fa-envelope text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Developer Terminal Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-slate-900/95 dark:bg-[#0D1322]/90 backdrop-blur-xl border border-slate-800 shadow-2xl overflow-hidden animate-float">
+            <!-- Window Title Bar -->
+            <div class="px-4 py-3 bg-slate-950/80 border-b border-slate-800/90 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/90"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/90"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/90"></span>
+              </div>
+              <span class="font-mono text-xs text-slate-400">vishwajeet.config.json</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">UTF-8</span>
+            </div>
+
+            <!-- Code Content -->
+            <div class="p-5 sm:p-6 font-mono text-xs sm:text-sm leading-relaxed text-slate-300 overflow-x-auto">
+              <pre><code><span class="text-slate-500">// Developer Profile Snapshot</span>
+<span class="text-indigo-400">const</span> <span class="text-cyan-300">developer</span> = {
+  <span class="text-slate-400">name</span>: <span class="text-emerald-400">"Vishwajeet Vilas Jadhav"</span>,
+  <span class="text-slate-400">role</span>: <span class="text-emerald-400">"Software Developer"</span>,
+  <span class="text-slate-400">education</span>: <span class="text-emerald-400">"MCA (Pursuing)"</span>,
+  <span class="text-slate-400">location</span>: <span class="text-amber-300">"Kadegaon, Sangli, MH"</span>,
+  <span class="text-slate-400">coreStack</span>: [
+    <span class="text-emerald-400">"Java"</span>, <span class="text-emerald-400">"Python"</span>, <span class="text-emerald-400">"Flask"</span>,
+    <span class="text-emerald-400">"JavaScript"</span>, <span class="text-emerald-400">"C#"</span>, <span class="text-emerald-400">"SQL"</span>
+  ],
+  <span class="text-slate-400">aiTools</span>: [<span class="text-emerald-400">"ChatGPT"</span>, <span class="text-emerald-400">"Gemini"</span>, <span class="text-emerald-400">"Claude AI"</span>]
+};</code></pre>
+            </div>
+
+            <!-- Bottom Status Bar -->
+            <div class="px-4 py-2.5 bg-indigo-600/15 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-indigo-300">
+              <span><i class="fa-solid fa-code-branch mr-1.5"></i>main</span>
+              <span><i class="fa-solid fa-check-circle text-emerald-400 mr-1"></i>Ready to build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. ABOUT & EDUCATION SECTION
+    ========================================================= -->
+    <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- About Bio -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-semibold">
+            <span class="w-6 h-[2px] bg-indigo-500"></span>
+            <span>01. About Me</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+            Analytical problem-solver building interactive web applications.
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
+            I am a dedicated <strong class="text-slate-900 dark:text-white font-semibold">Master of Computer Application (MCA)</strong> student based in Kadegaon, Dist. Sangli, Maharashtra, seeking a challenging internship or entry-level software development position.
+          </p>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-base">
+            Proficient in <strong class="text-slate-800 dark:text-slate-200">Java, Python, and modern web development</strong>, I have practical experience architecting full-stack Flask apps, interactive e-learning platforms, and responsive web portfolios leveraging Cloud AI tools for rapid prototyping and efficient logic optimization.
+          </p>
+
+          <!-- Languages & Personal Quick Info -->
+          <div class="p-4 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md space-y-2 text-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-slate-500 dark:text-slate-400"><i class="fa-solid fa-language text-indigo-500 mr-1.5"></i>Languages Known:</span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">English, Hindi, Marathi</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-slate-500 dark:text-slate-400"><i class="fa-solid fa-cake-candles text-violet-500 mr-1.5"></i>Date of Birth:</span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">December 28, 2005</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-mono text-slate-500 dark:text-slate-400"><i class="fa-solid fa-location-dot text-cyan-500 mr-1.5"></i>Hometown:</span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">Taluka Kadegaon, Dist. Sangli, Maharashtra</span>
+            </div>
+          </div>
+
+          <!-- Quick Highlights Grid -->
+          <div class="grid grid-cols-3 gap-3 pt-2">
+            <div class="p-4 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+              <div class="text-2xl font-extrabold text-indigo-500">8.30</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">BCA CGPA</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+              <div class="text-2xl font-extrabold text-cyan-500">3+</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Web & Flask Apps</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+              <div class="text-2xl font-extrabold text-violet-500">2</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Verified Credentials</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 font-semibold">
+            <span class="w-6 h-[2px] bg-cyan-500"></span>
+            <span>Academic Background</span>
+          </div>
+          <h3 class="text-2xl font-bold tracking-tight">Education Timeline</h3>
+
+          <div class="relative pl-6 border-l-2 border-indigo-500/30 space-y-5">
+            <!-- MCA Card -->
+            <div class="relative p-5 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-indigo-500/50 transition-all">
+              <span class="absolute -left-[33px] top-6 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-indigo-500/20"></span>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                <span class="px-3 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                  Currently Pursuing
+                </span>
+                <span class="text-xs font-mono text-slate-400">Postgraduate</span>
+              </div>
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Master of Computer Application (MCA)</h4>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                Specializing in software engineering, full-stack web architectures, database systems, and Cloud AI-assisted development.
+              </p>
+            </div>
+
+            <!-- BCA Card -->
+            <div class="relative p-5 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-cyan-500/50 transition-all">
+              <span class="absolute -left-[33px] top-6 w-4 h-4 rounded-full bg-cyan-500 ring-4 ring-cyan-500/20"></span>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                <span class="px-3 py-0.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/25">
+                  CGPA: 8.30
+                </span>
+                <span class="text-xs font-mono text-slate-400">Undergraduate</span>
+              </div>
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Bachelor of Computer Application (BCA)</h4>
+              <p class="text-xs sm:text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5">Bharati Vidyapeeth Deemed University, Karad, Malkapur</p>
+            </div>
+
+            <!-- 12th / HSC & 10th / SSC Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- HSC -->
+              <div class="relative p-4 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm">
+                <span class="absolute -left-[33px] top-5 w-4 h-4 rounded-full bg-violet-500 ring-4 ring-violet-500/20 sm:block"></span>
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-violet-500/15 text-violet-600 dark:text-violet-300 mb-1.5">
+                  Score: 50.67%
+                </span>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Higher Secondary Certificate (12th / HSC)</h4>
+              </div>
+
+              <!-- SSC -->
+              <div class="relative p-4 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm">
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 mb-1.5">
+                  Score: 76.40%
+                </span>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Secondary School Certificate (10th / SSC)</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. FEATURED PROJECTS & WEB ASSIGNMENTS SECTION
+    ========================================================= -->
+    <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-semibold mb-3">
+            <span class="w-6 h-[2px] bg-indigo-500"></span>
+            <span>03. Selected Work & Lab Practicals</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Projects & Web Assignments</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+            Explore my full-stack & frontend projects alongside practical MCA/BCA web engineering assignments with interactive live mini-demos.
+          </p>
+        </div>
+
+        <!-- Interactive Filter Tabs & Add Assignment Trigger -->
+        <div class="flex flex-wrap items-center gap-2">
+          <div id="projectFilters" class="flex flex-wrap gap-2">
+            <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-indigo-600 text-white shadow-sm transition-all">
+              All (<span id="countAll">8</span>)
+            </button>
+            <button data-filter="featured" class="filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white/80 dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-500/50 transition-all">
+              Featured Projects (<span id="countFeatured">3</span>)
+            </button>
+            <button data-filter="assignment" class="filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white/80 dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all">
+              Web Assignments (<span id="countAssignment">5</span>)
+            </button>
+          </div>
+
+          <button id="openAddAssignmentBtn" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-semibold bg-emerald-600 text-white hover:bg-emerald-500 shadow-sm transition-all">
+            <i class="fa-solid fa-plus"></i>
+            <span>Add Assignment</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Featured Projects Showcase Grid -->
+      <div id="featuredBlock" class="mb-14">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="text-lg font-bold flex items-center gap-2.5 text-slate-900 dark:text-white">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+            <span>Featured Software & Web Projects</span>
+          </h3>
+          <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Core Portfolio</span>
+        </div>
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Featured project cards rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Dedicated Web Assignments Subsection -->
+      <div id="assignmentsBlock" class="p-6 sm:p-8 rounded-3xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200/80 dark:border-slate-800/80">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono text-cyan-600 dark:text-cyan-400 font-semibold">
+              <i class="fa-solid fa-terminal"></i>
+              <span>WEB ENGINEERING LAB & PRACTICALS</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">Web Assignments</h3>
+          </div>
+          <p class="text-xs font-mono text-slate-500 dark:text-slate-400">
+            Click <span class="text-cyan-600 dark:text-cyan-400 font-semibold">"Details & Live Demo"</span> on any assignment to test it live.
+          </p>
+        </div>
+
+        <div id="assignmentsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Web assignment cards rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. CERTIFICATIONS & BADGES SECTION
+    ========================================================= -->
+    <section id="certifications" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-semibold mb-3">
+          <span class="w-6 h-[2px] bg-indigo-500"></span>
+          <span>04. Verified Credentials</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Certifications & Badges</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-2">
+          Official credentials in artificial intelligence foundations and professional career development.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Certificate 1: AI Foundations Credential -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-600/10 via-slate-900/5 to-cyan-500/10 dark:from-indigo-950/40 dark:via-slate-900/80 dark:to-cyan-950/30 backdrop-blur-md border border-indigo-500/25 shadow-sm flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-500 text-xl">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25">
+                Issued: October 2026
+              </span>
+            </div>
+
+            <div class="text-xs font-mono uppercase tracking-wider text-indigo-600 dark:text-indigo-400 font-semibold">
+              OpenAI Academy
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
+              AI Foundations Credential
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              Validated foundational knowledge in generative AI concepts, effective prompt engineering, and ethical integration of AI tools into modern software workflows.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+            <span class="text-slate-500 dark:text-slate-400">Credential ID:</span>
+            <span class="px-2.5 py-1 rounded-lg bg-white/80 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 select-all">
+              47459b3a-7fff-4ad0-bfa8-d0b7c74b38bb
+            </span>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Professional Networking for Career Growth -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col justify-between hover:border-cyan-500/50 transition-all">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+              <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-500 text-xl">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 border border-cyan-500/25">
+                Issued: April 2026
+              </span>
+            </div>
+
+            <div class="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-semibold">
+              HP LIFE Foundation
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
+              Professional Networking for Career Growth
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              Completed structured training in strategic professional relationship building, effective career communication, and digital presence management.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+            <span class="text-slate-500 dark:text-slate-400">Serial No:</span>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 select-all">
+              06cf63fb-b7e4-4c4e-901a-995ab663630a
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. INTERACTIVE CONTACT SECTION
+    ========================================================= -->
+    <section id="contact" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-200/70 dark:border-slate-800/70">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Direct Contact & Resume Trigger -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-semibold">
+            <span class="w-6 h-[2px] bg-indigo-500"></span>
+            <span>05. Get In Touch</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+            Let’s connect for opportunities & projects.
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+            Actively looking for software development internships and entry-level roles. Reach out directly via email, phone, or social links.
+          </p>
+
+          <!-- Direct Contact Cards -->
+          <div class="space-y-3 pt-1">
+            <!-- Email -->
+            <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/15 text-indigo-500 flex items-center justify-center shrink-0">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="truncate">
+                  <div class="text-xs text-slate-500 dark:text-slate-400">Email Address</div>
+                  <a href="mailto:vishvajeetjadhav2812@gmail.com" id="emailText" class="text-sm font-mono font-medium hover:text-indigo-500 transition-colors truncate block">vishvajeetjadhav2812@gmail.com</a>
+                </div>
+              </div>
+              <button id="copyEmailBtn" title="Copy Email Address" class="px-3 py-2 rounded-xl text-xs font-mono bg-slate-100 dark:bg-slate-800 hover:bg-indigo-500 hover:text-white transition-colors shrink-0">
+                <i class="fa-regular fa-copy mr-1"></i>Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Phone</div>
+                <a href="tel:+917397871734" class="text-sm font-mono font-medium hover:text-emerald-500 transition-colors">+91 7397871734</a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="p-4 rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-500 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Address</div>
+                <div class="text-sm font-medium">Taluka Kadegaon, Dist. Sangli, Maharashtra, India</div>
+              </div>
+            </div>
+
+            <!-- Social Profiles Row -->
+            <div class="grid grid-cols-3 gap-2.5 pt-1">
+              <a href="https://github.com/vishvajeetjadhav2812-sketch" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/50 flex flex-col items-center justify-center gap-1 text-center transition-all group">
+                <i class="fa-brands fa-github text-lg text-slate-700 dark:text-slate-200 group-hover:text-indigo-500"></i>
+                <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/vishvajeet-jadhav-836868397?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 hover:border-sky-500/50 flex flex-col items-center justify-center gap-1 text-center transition-all group">
+                <i class="fa-brands fa-linkedin-in text-lg text-sky-500"></i>
+                <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">LinkedIn</span>
+              </a>
+              <a href="https://instagram.com/vishwajeet_jadhav_06" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/90 dark:border-slate-800 hover:border-pink-500/50 flex flex-col items-center justify-center gap-1 text-center transition-all group">
+                <i class="fa-brands fa-instagram text-lg text-pink-500"></i>
+                <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">@vishwajeet_jadhav_06</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Download / Preview Resume Interactive Trigger -->
+          <div class="pt-1">
+            <button id="downloadResumeBtn" class="w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl font-semibold text-sm bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition-all shadow-md">
+              <i class="fa-solid fa-file-arrow-down text-indigo-500"></i>
+              <span>Preview & Print Resume (PDF)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-7">
+          <form id="contactForm" class="p-6 sm:p-8 rounded-2xl bg-white/85 dark:bg-slate-900/75 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-lg space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contactName" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">Your Name *</label>
+                <input type="text" id="contactName" name="name" required placeholder="e.g. Rohan Sharma" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+              </div>
+              <div>
+                <label for="contactEmail" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">Email Address *</label>
+                <input type="email" id="contactEmail" name="email" required placeholder="rohan@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label for="contactMessage" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">Message *</label>
+              <textarea id="contactMessage" name="message" rows="4" required placeholder="Tell me about your project, opportunity, or question..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-600 hover:brightness-110 shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center gap-2">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       8. FOOTER
+  ========================================================= -->
+  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 bg-white/50 dark:bg-[#050811]/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400">
+        <span class="font-mono font-bold text-indigo-500">VJ</span>
+        <span>&copy; <span id="currentYear"></span> Vishwajeet Vilas Jadhav. Kadegaon, Sangli, Maharashtra.</span>
+      </div>
+
+      <a href="#top" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-medium bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-indigo-500/50 hover:text-indigo-500 transition-all">
+        <span>Back to top</span>
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       PROJECT CASE STUDY & PREVIEW MODAL
+  ========================================================= -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl rounded-2xl bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden animate-[fadeIn_0.2s_ease-out]">
+      <!-- Modal Top Header -->
+      <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span id="modalCategoryBadge" class="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-indigo-500/15 text-indigo-500">Project Details</span>
+        </div>
+        <button id="closeProjectModal" aria-label="Close Modal" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-5 max-h-[80vh] overflow-y-auto">
+        <div class="flex items-start gap-4">
+          <div id="modalIconBox" class="w-12 h-12 rounded-2xl bg-indigo-500/15 text-indigo-500 flex items-center justify-center text-xl shrink-0"></div>
+          <div>
+            <h3 id="modalTitle" class="text-2xl font-bold text-slate-900 dark:text-white"></h3>
+            <p id="modalTagline" class="text-sm text-indigo-600 dark:text-indigo-400 font-medium mt-0.5"></p>
+          </div>
+        </div>
+
+        <p id="modalDescription" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">Key Architecture & Features</h4>
+          <ul id="modalFeatures" class="space-y-2 text-sm text-slate-700 dark:text-slate-300"></ul>
+        </div>
+
+        <!-- Interactive Live Mini-Demo Container (for Web Assignments) -->
+        <div id="modalDemoWrapper" class="hidden rounded-2xl bg-slate-50 dark:bg-slate-950/90 border border-cyan-500/30 p-4 sm:p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
+              <i class="fa-solid fa-play-circle mr-1.5"></i>Interactive Assignment Live Demo
+            </span>
+            <span class="text-[11px] font-mono text-slate-400">Client-side Sandbox</span>
+          </div>
+          <div id="modalDemoContent"></div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">Tech Stack</h4>
+          <div id="modalTech" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <a id="modalExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/25 transition-all">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span id="modalExternalLinkText">Open Assignment Link</span>
+          </a>
+          <a id="modalLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all">
+            <i class="fa-solid fa-globe"></i>
+            <span>Live Website</span>
+          </a>
+          <div class="flex items-center gap-3 ml-auto">
+            <button id="modalCloseFooterBtn" class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:opacity-90 transition-all">
+              Close Preview
+            </button>
+            <a href="#contact" id="modalInquireBtn" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-all">
+              Request Source / Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ADD NEW WEB ASSIGNMENT MODAL (Persisted in LocalStorage)
+  ========================================================= -->
+  <div id="addAssignmentModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-lg rounded-2xl bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <span class="font-mono text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+          <i class="fa-solid fa-folder-plus mr-2"></i>Add College Web Assignment
+        </span>
+        <button id="closeAddAssignmentModal" aria-label="Close Modal" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="addAssignmentForm" class="p-6 space-y-4">
+        <div>
+          <label for="assignTitle" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">Assignment Title *</label>
+          <input type="text" id="assignTitle" required placeholder="e.g. Assignment 05: Responsive Login & Validation Form" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label for="assignTech" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">Technologies Used (comma-separated) *</label>
+          <input type="text" id="assignTech" required placeholder="e.g. HTML5, CSS3, JavaScript" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div>
+          <label for="assignSummary" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">Description *</label>
+          <textarea id="assignSummary" rows="3" required placeholder="Briefly describe what this web assignment builds and demonstrates..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-emerald-500 resize-none"></textarea>
+        </div>
+
+        <div>
+          <label for="assignUrl" class="block text-xs font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">GitHub / Live URL (Optional)</label>
+          <input type="url" id="assignUrl" placeholder="https://github.com/vishvajeetjadhav2812-sketch/..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#080D1A] border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:border-emerald-500" />
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-2.5">
+          <button type="button" id="cancelAddAssignmentBtn" class="px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            Cancel
+          </button>
+          <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-emerald-600 text-white hover:bg-emerald-500 shadow-sm">
+            Save Assignment
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTIVE RESUME PREVIEW & PRINT MODAL
+  ========================================================= -->
+  <div id="resumeModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm">
+    <div class="relative w-full max-w-3xl rounded-2xl bg-white dark:bg-[#0D1322] border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <span class="font-mono text-xs font-semibold text-slate-600 dark:text-slate-300">
+          <i class="fa-regular fa-file-pdf text-rose-500 mr-2"></i>Vishwajeet_Vilas_Jadhav_Resume.pdf
+        </span>
+        <div class="flex items-center gap-2">
+          <button id="printResumeAction" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors">
+            <i class="fa-solid fa-print mr-1.5"></i>Print / Save PDF
+          </button>
+          <button id="closeResumeModal" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-800">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Resume Sheet -->
+      <div id="printableResume" class="p-6 sm:p-10 bg-white text-slate-900 max-h-[80vh] overflow-y-auto space-y-5">
+        <div class="border-b-2 border-slate-900 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">VISHWAJEET VILAS JADHAV</h2>
+            <p class="text-sm font-semibold text-indigo-600">Master of Computer Application (MCA) Student & Software Developer</p>
+          </div>
+          <div class="text-xs text-slate-600 sm:text-right font-mono space-y-0.5">
+            <div>Phone: +91 7397871734</div>
+            <div>Email: vishvajeetjadhav2812@gmail.com</div>
+            <div>Location: Kadegaon, Dist. Sangli, Maharashtra</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Professional Summary</h3>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Dedicated Master of Computer Application (MCA) student seeking a challenging internship or entry-level software development position. Proficient in Java, Python, and modern web development, with practical experience building interactive web applications leveraging Cloud AI tools. Committed to leveraging strong analytical skills to contribute to organizational success while continuing to learn and grow.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Technical & Soft Skills</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
+            <div><strong>Proficient In:</strong> Java, Python, HTML, CSS, JavaScript</div>
+            <div><strong>Familiar With:</strong> Python Flask, C#, SQL</div>
+            <div><strong>AI & Cloud Tools:</strong> ChatGPT, Gemini, Claude AI</div>
+            <div><strong>Soft Skills:</strong> Adaptability, Problem Solving, Effective Communication, Teamwork, Computer Literacy</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Projects</h3>
+          <ul class="space-y-2 text-xs text-slate-700">
+            <li><strong>Python Project (NSDC)</strong> (Python): Python project built during NSDC training. GitHub: github.com/vishvajeetjadhav2812-sketch/pyhton_project_NSDC</li>
+            <li><strong>All API Project</strong> (HTML, CSS, JavaScript, APIs): Web project using multiple APIs. Live: vishvajeetjadhav2812-sketch.github.io/all_api_project | GitHub: github.com/vishvajeetjadhav2812-sketch/all_api_project</li>
+            <li><strong>Online Learning Website</strong> (HTML, CSS, JavaScript): Online learning website. Live: vishvajeetjadhav2812-sketch.github.io/vrf_learnig | GitHub: github.com/vishvajeetjadhav2812-sketch/vrf_learnig</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Education</h3>
+            <ul class="space-y-1.5 text-xs text-slate-700">
+              <li><strong>Master of Computer Application (MCA)</strong> — Currently Pursuing</li>
+              <li><strong>Bachelor of Computer Application (BCA)</strong> — Bharati Vidyapeeth Deemed University, Karad, Malkapur (CGPA: 8.30)</li>
+              <li><strong>Higher Secondary Certificate (12th / HSC)</strong> — Score: 50.67%</li>
+              <li><strong>Secondary School Certificate (10th / SSC)</strong> — Score: 76.40%</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Certifications & Languages</h3>
+            <ul class="space-y-1.5 text-xs text-slate-700">
+              <li><strong>AI Foundations Credential</strong> — OpenAI Academy (Oct 2026 | ID: 47459b3a-7fff-4ad0-bfa8-d0b7c74b38bb)</li>
+              <li><strong>Professional Networking for Career Growth</strong> — HP LIFE Foundation (Apr 2026 | Serial: 06cf63fb-b7e4-4c4e-901a-995ab663630a)</li>
+              <li><strong>Languages Known:</strong> English, Hindi, Marathi | <strong>DOB:</strong> Dec 28, 2005</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       TOAST NOTIFICATION BANNER
+  ========================================================= -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="flex items-center gap-3 px-4 py-3.5 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-2xl border border-slate-700 dark:border-slate-200 text-sm font-medium">
+      <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600 text-base"></i>
+      <span id="toastMessage">Action completed successfully!</span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       JAVASCRIPT INTERACTIVITY
+  ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set current footer year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // -------------------------------------------------------
+      // 3. Featured Projects & Web Assignments Data, Filtering & Modals
+      // -------------------------------------------------------
+      const featuredProjectsData = [
+        {
+          id: 'python-nsdc',
+          type: 'featured',
+          title: 'Python Project (NSDC)',
+          tagline: 'Python project built during NSDC training',
+          categoryLabel: 'Featured Project',
+          icon: 'fa-brands fa-python',
+          summary: 'Python project developed as part of the NSDC (National Skill Development Corporation) training program. Full source code is available on GitHub.',
+          features: [
+            'Built with Python as a practical project for the NSDC training course.',
+            'Source code organised and published in a public GitHub repository.'
+          ],
+          tech: ['Python', 'GitHub'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/pyhton_project_NSDC'
+        },
+        {
+          id: 'all-api-project',
+          type: 'featured',
+          title: 'All API Project',
+          tagline: 'Working with multiple APIs in one web project',
+          categoryLabel: 'Featured Project',
+          icon: 'fa-solid fa-plug',
+          summary: 'A web project that brings together different APIs in one place. It is hosted live on GitHub Pages and the source code is available on GitHub.',
+          features: [
+            'Live version hosted on GitHub Pages and open to try in the browser.',
+            'Source code published in a public GitHub repository.'
+          ],
+          tech: ['HTML', 'CSS', 'JavaScript', 'APIs'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/all_api_project',
+          liveUrl: 'https://vishvajeetjadhav2812-sketch.github.io/all_api_project'
+        },
+        {
+          id: 'online-learning',
+          type: 'featured',
+          title: 'Online Learning Website',
+          tagline: 'Learning website with live GitHub Pages demo',
+          categoryLabel: 'Featured Project',
+          icon: 'fa-solid fa-laptop-code',
+          summary: 'An online learning website built with HTML, CSS and JavaScript. It is hosted live on GitHub Pages and the source code is available on GitHub.',
+          features: [
+            'Live version hosted on GitHub Pages and open to try in the browser.',
+            'Source code published in a public GitHub repository.'
+          ],
+          tech: ['HTML', 'CSS', 'JavaScript'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/vrf_learnig',
+          liveUrl: 'https://vishvajeetjadhav2812-sketch.github.io/vrf_learnig/'
+        }
+      ];
+
+      const defaultAssignmentsData = [
+        {
+          id: 'assign-01',
+          type: 'assignment',
+          number: 'Assignment 01',
+          title: 'Lab Setup & First HTML Pages',
+          tagline: 'Web development environment setup and HTML basics',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-laptop-code',
+          summary: 'Set up the web development environment with VS Code, Chrome and useful extensions, created the standard project folder structure and built the first HTML pages covering headings, paragraphs, text formatting, lists and links.',
+          features: [
+            'VS Code setup with Live Server, Prettier, Auto Rename Tag, Auto Close Tag and HTML CSS Support extensions.',
+            'Standard folder structure for HTML, images and media files.',
+            'First HTML pages using headings, paragraphs, line breaks, horizontal rules and comments.'
+          ],
+          tech: ['HTML5', 'VS Code', 'Live Server'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/web_assignment_1'
+        },
+        {
+          id: 'assign-02',
+          type: 'assignment',
+          number: 'Assignment 02',
+          title: 'Handling Images & Tables',
+          tagline: 'HTML tables with rowspan, colspan, images and links',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-table',
+          summary: 'Built HTML tables for student records, semester subjects, department-wise students, marks, patients and a class time table using rowspan and colspan, with hyperlinks and images placed inside table cells.',
+          features: [
+            'Merged cells using rowspan and colspan in student, marks and patient tables.',
+            'Class time table with a break column and combined lab periods.',
+            'Images and hyperlinks inside table cells, plus practice of caption, thead, tbody, tfoot and colgroup.'
+          ],
+          tech: ['HTML5', 'Tables', 'Images', 'Hyperlinks'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/web_assignment_2'
+        },
+        {
+          id: 'assign-03',
+          type: 'assignment',
+          number: 'Assignment 03',
+          title: 'HTML Forms',
+          tagline: '50 form questions: Basic, Intermediate & Advanced',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-id-card',
+          summary: 'Solved 50 HTML form questions covering input types, validation attributes, fieldset/legend, file uploads, multi-step forms and accessible forms with ARIA.',
+          features: [
+            'Basic to advanced form controls: text, password, radio, checkbox, select, textarea, date, time, colour and range.',
+            'Built-in validation using required, pattern, min/max and accept attributes.',
+            'Multi-step form, password-match check and accessible forms using ARIA roles.'
+          ],
+          tech: ['HTML5', 'CSS3', 'JavaScript'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/web_assignment_3'
+        },
+        {
+          id: 'assign-04',
+          type: 'assignment',
+          number: 'Assignment 04',
+          title: 'HTML5 Semantic Elements, SVG & Canvas',
+          tagline: '50 questions on semantic layout, SVG graphics and canvas drawing',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-table-columns',
+          summary: 'Solved 50 HTML5 questions using semantic tags (header, nav, main, section, article, aside, footer, figure, address, time), inline SVG shapes and canvas drawing with JavaScript.',
+          features: [
+            'Semantic page layouts for blogs, magazines, newspapers and dashboards.',
+            'Inline SVG shapes, a sunset scene and a bar chart.',
+            'Canvas drawings: house, gradients, bouncing ball and an animated graph.'
+          ],
+          tech: ['HTML5', 'SVG', 'Canvas', 'CSS3', 'JavaScript'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/web_assignment_4'
+        },
+        {
+          id: 'assign-05',
+          type: 'assignment',
+          number: 'Assignment 05',
+          title: 'JavaScript Basics Lab Programs',
+          tagline: '22 client-side JavaScript programs',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-calculator',
+          summary: 'Solved 22 JavaScript lab programs including registration and exam forms, marksheet by seat number, prime numbers, multiplication tables, calculator, events, timers and form validation.',
+          features: [
+            'Forms with JavaScript validation: exam, registration, hospital and student forms.',
+            'Number programs: even, odd, prime, factorial, Fibonacci and multiplication tables.',
+            'Events, setInterval/clearInterval, calculator and string replace programs.'
+          ],
+          tech: ['JavaScript', 'HTML5', 'CSS3', 'DOM API'],
+          url: 'https://github.com/vishvajeetjadhav2812-sketch/web_assignment_5'
+        }
+      ];
+
+      // Load custom user-added assignments from LocalStorage
+      const CUSTOM_ASSIGNMENTS_KEY = 'vj-custom-web-assignments';
+      const loadCustomAssignments = () => {
+        try {
+          const saved = JSON.parse(localStorage.getItem(CUSTOM_ASSIGNMENTS_KEY));
+          return Array.isArray(saved) ? saved : [];
+        } catch {
+          return [];
+        }
+      };
+
+      let customAssignments = loadCustomAssignments();
+      const getAllAssignments = () => [...defaultAssignmentsData, ...customAssignments];
+
+      const projectsGrid = document.getElementById('projectsGrid');
+      const assignmentsGrid = document.getElementById('assignmentsGrid');
+      const featuredBlock = document.getElementById('featuredBlock');
+      const assignmentsBlock = document.getElementById('assignmentsBlock');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      function updateFilterCounts() {
+        const allAssigns = getAllAssignments();
+        document.getElementById('countFeatured').textContent = featuredProjectsData.length;
+        document.getElementById('countAssignment').textContent = allAssigns.length;
+        document.getElementById('countAll').textContent = featuredProjectsData.length + allAssigns.length;
+      }
+
+      function renderProjectsAndAssignments(filter = 'all') {
+        updateFilterCounts();
+
+        // Toggle section visibility based on filter
+        if (filter === 'featured') {
+          featuredBlock.classList.remove('hidden');
+          assignmentsBlock.classList.add('hidden');
+        } else if (filter === 'assignment') {
+          featuredBlock.classList.add('hidden');
+          assignmentsBlock.classList.remove('hidden');
+        } else {
+          featuredBlock.classList.remove('hidden');
+          assignmentsBlock.classList.remove('hidden');
+        }
+        if (getAllAssignments().length === 0 && filter !== 'assignment') {
+          assignmentsBlock.classList.add('hidden');
+        }
+
+        // Render Featured Projects
+        projectsGrid.innerHTML = featuredProjectsData.map(project => `
+          <article class="group relative p-6 sm:p-7 rounded-2xl bg-white/85 dark:bg-slate-900/75 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/50 transition-all shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-3 mb-5">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/15 text-indigo-500 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                  <i class="${project.icon}"></i>
+                </div>
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20">
+                  ${project.categoryLabel}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-500 transition-colors">
+                ${project.title}
+              </h3>
+              <p class="text-xs font-mono text-indigo-600 dark:text-indigo-400 mt-1">
+                ${project.tagline}
+              </p>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                ${project.summary}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between gap-3">
+              <div class="flex flex-wrap gap-1.5">
+                ${project.tech.map(t => `
+                  <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-slate-100 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300">
+                    ${t}
+                  </span>
+                `).join('')}
+              </div>
+
+              <button data-item-id="${project.id}" class="open-item-btn shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                <span>Details</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+              </button>
+            </div>
+          </article>
+        `).join('');
+
+        // Render Web Assignments
+        const allAssignments = getAllAssignments();
+        assignmentsGrid.innerHTML = allAssignments.map((assign, index) => {
+          const badgeNum = assign.number || `Assignment ${String(index + 1).padStart(2, '0')}`;
+          return `
+            <article class="group relative p-5 sm:p-6 rounded-2xl bg-white/90 dark:bg-[#0B1120]/90 border border-slate-200/90 dark:border-slate-800 hover:border-cyan-500/50 transition-all shadow-sm hover:shadow-lg flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3.5">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-500 flex items-center justify-center text-base">
+                      <i class="${assign.icon || 'fa-solid fa-file-code'}"></i>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/25">
+                      Web Assignment • ${badgeNum}
+                    </span>
+                  </div>
+                  ${assign.isCustom ? `
+                    <button data-delete-id="${assign.id}" title="Remove Custom Assignment" class="delete-assign-btn p-1.5 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 transition-colors">
+                      <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                  ` : ''}
+                </div>
+
+                <h4 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-cyan-500 transition-colors">
+                  ${assign.title}
+                </h4>
+                <p class="text-xs font-mono text-cyan-600 dark:text-cyan-400 mt-0.5">
+                  ${assign.tagline}
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                  ${assign.summary}
+                </p>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex flex-wrap gap-1.5">
+                  ${assign.tech.map(t => `
+                    <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-slate-100 dark:bg-slate-800/90 text-slate-700 dark:text-slate-300">
+                      ${t}
+                    </span>
+                  `).join('')}
+                </div>
+
+                <button data-item-id="${assign.id}" class="open-item-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 hover:bg-cyan-500 hover:text-white transition-all">
+                  <span>${assign.demoType ? 'Details & Live Demo' : 'View Details'}</span>
+                  <i class="fa-solid fa-play text-[10px]"></i>
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('') || '<p class="text-sm font-mono text-slate-500 dark:text-slate-400 col-span-full">No web assignments yet. Use "Add Assignment" to add one.</p>';
+
+        // Attach modal open listeners for both projects & assignments
+        document.querySelectorAll('.open-item-btn').forEach(btn => {
+          btn.addEventListener('click', () => openItemModal(btn.dataset.itemId));
+        });
+
+        // Attach delete listeners for custom assignments
+        document.querySelectorAll('.delete-assign-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idToRemove = btn.dataset.deleteId;
+            customAssignments = customAssignments.filter(a => a.id !== idToRemove);
+            localStorage.setItem(CUSTOM_ASSIGNMENTS_KEY, JSON.stringify(customAssignments));
+            renderProjectsAndAssignments(currentFilter);
+            showToast('Custom assignment removed.');
+          });
+        });
+      }
+
+      let currentFilter = 'all';
+      renderProjectsAndAssignments('all');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentFilter = btn.dataset.filter;
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-indigo-600', 'text-white');
+            b.classList.add('bg-white/80', 'dark:bg-slate-900/80', 'text-slate-600', 'dark:text-slate-300');
+          });
+          btn.classList.add('bg-indigo-600', 'text-white');
+          btn.classList.remove('bg-white/80', 'dark:bg-slate-900/80', 'text-slate-600', 'dark:text-slate-300');
+          renderProjectsAndAssignments(currentFilter);
+        });
+      });
+
+      // -------------------------------------------------------
+      // Interactive Mini-Demos Renderer inside Modal
+      // -------------------------------------------------------
+      function renderAssignmentDemo(demoType) {
+        const wrapper = document.getElementById('modalDemoWrapper');
+        const container = document.getElementById('modalDemoContent');
+
+        if (!demoType) {
+          wrapper.classList.add('hidden');
+          container.innerHTML = '';
+          return;
+        }
+
+        wrapper.classList.remove('hidden');
+
+        if (demoType === 'registration') {
+          container.innerHTML = `
+            <form id="demoRegForm" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <input type="text" id="demoStudentName" required placeholder="Student Full Name" class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" />
+              <input type="text" id="demoRollNo" required pattern="[A-Za-z0-9-]+" placeholder="Roll No (e.g. MCA-104)" class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" />
+              <select id="demoCourse" class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                <option value="MCA - Web Technologies">MCA - Web Technologies</option>
+                <option value="BCA - Frontend Lab">BCA - Frontend Lab</option>
+              </select>
+              <button type="submit" class="px-4 py-2 rounded-lg font-semibold bg-cyan-600 text-white hover:bg-cyan-500 transition-colors">
+                Validate & Generate ID Card
+              </button>
+            </form>
+            <div id="demoRegOutput" class="mt-3 text-xs font-mono text-emerald-600 dark:text-emerald-400"></div>
+          `;
+          document.getElementById('demoRegForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const sName = document.getElementById('demoStudentName').value.trim();
+            const sRoll = document.getElementById('demoRollNo').value.trim();
+            const sCourse = document.getElementById('demoCourse').value;
+            document.getElementById('demoRegOutput').innerHTML = `
+              <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/25">
+                <strong>Verified ID Card:</strong> ${sName} | Roll: ${sRoll} | Course: ${sCourse}
+              </div>
+            `;
+          });
+        } else if (demoType === 'todo') {
+          let demoTasks = ['Complete HTML5 Semantic Form', 'Practice JS DOM Event Listeners'];
+          const drawTasks = () => {
+            const listEl = document.getElementById('demoTodoList');
+            if (!listEl) return;
+            listEl.innerHTML = demoTasks.map((task, idx) => `
+              <li class="flex items-center justify-between px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs">
+                <span>${task}</span>
+                <button type="button" data-idx="${idx}" class="demo-del-task text-rose-500 hover:underline font-mono text-[11px]">Remove</button>
+              </li>
+            `).join('');
+            listEl.querySelectorAll('.demo-del-task').forEach(b => {
+              b.addEventListener('click', () => {
+                demoTasks.splice(Number(b.dataset.idx), 1);
+                drawTasks();
+              });
+            });
+          };
+          container.innerHTML = `
+            <div class="flex gap-2 mb-3">
+              <input type="text" id="demoTodoInput" placeholder="Add new lab task..." class="flex-1 px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs" />
+              <button type="button" id="demoTodoAddBtn" class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white hover:bg-cyan-500">Add</button>
+            </div>
+            <ul id="demoTodoList" class="space-y-1.5"></ul>
+          `;
+          drawTasks();
+          document.getElementById('demoTodoAddBtn').addEventListener('click', () => {
+            const inp = document.getElementById('demoTodoInput');
+            if (inp.value.trim()) {
+              demoTasks.push(inp.value.trim());
+              inp.value = '';
+              drawTasks();
+            }
+          });
+        } else if (demoType === 'layout') {
+          container.innerHTML = `
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-slate-500">Preview CSS Grid Columns:</span>
+                <div class="flex gap-1.5">
+                  <button type="button" data-cols="1" class="demo-grid-btn px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-800 font-mono">1 Col (Mobile)</button>
+                  <button type="button" data-cols="3" class="demo-grid-btn px-2.5 py-1 rounded bg-cyan-600 text-white font-mono">3 Col (Desktop)</button>
+                </div>
+              </div>
+              <div id="demoGridBox" class="grid grid-cols-3 gap-2.5 transition-all">
+                <div class="p-3 rounded-xl bg-indigo-500/15 border border-indigo-500/25 text-center font-mono">Flex Header</div>
+                <div class="p-3 rounded-xl bg-cyan-500/15 border border-cyan-500/25 text-center font-mono">Grid Card</div>
+                <div class="p-3 rounded-xl bg-violet-500/15 border border-violet-500/25 text-center font-mono">CTA Footer</div>
+              </div>
+            </div>
+          `;
+          container.querySelectorAll('.demo-grid-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const cols = btn.dataset.cols;
+              const box = document.getElementById('demoGridBox');
+              box.className = cols === '1' ? 'grid grid-cols-1 gap-2.5 transition-all' : 'grid grid-cols-3 gap-2.5 transition-all';
+            });
+          });
+        } else if (demoType === 'calculator') {
+          container.innerHTML = `
+            <div class="grid grid-cols-3 gap-2 text-xs mb-3">
+              <input type="number" id="mJava" min="0" max="100" value="85" placeholder="Java" class="px-2.5 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" />
+              <input type="number" id="mPython" min="0" max="100" value="88" placeholder="Python" class="px-2.5 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" />
+              <input type="number" id="mWeb" min="0" max="100" value="91" placeholder="Web Tech" class="px-2.5 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800" />
+            </div>
+            <button type="button" id="calcGradeBtn" class="px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white hover:bg-cyan-500">
+              Calculate Percentage & Grade
+            </button>
+            <div id="calcGradeOutput" class="mt-2.5 text-xs font-mono text-emerald-600 dark:text-emerald-400">
+              Total: 264/300 | Percentage: 88.00% | Grade: Distinction
+            </div>
+          `;
+          document.getElementById('calcGradeBtn').addEventListener('click', () => {
+            const j = Math.min(100, Math.max(0, Number(document.getElementById('mJava').value) || 0));
+            const p = Math.min(100, Math.max(0, Number(document.getElementById('mPython').value) || 0));
+            const w = Math.min(100, Math.max(0, Number(document.getElementById('mWeb').value) || 0));
+            const total = j + p + w;
+            const pct = (total / 300) * 100;
+            const grade = pct >= 75 ? 'Distinction' : pct >= 60 ? 'First Class' : pct >= 40 ? 'Pass' : 'Needs Improvement';
+            document.getElementById('calcGradeOutput').textContent = `Total: ${total}/300 | Percentage: ${pct.toFixed(2)}% | Grade: ${grade}`;
+          });
+        }
+      }
+
+      // Project & Assignment Detail Modal Logic
+      const projectModal = document.getElementById('projectModal');
+      const closeProjectModalBtn = document.getElementById('closeProjectModal');
+      const modalCloseFooterBtn = document.getElementById('modalCloseFooterBtn');
+      const modalInquireBtn = document.getElementById('modalInquireBtn');
+
+      function openItemModal(itemId) {
+        const allItems = [...featuredProjectsData, ...getAllAssignments()];
+        const item = allItems.find(p => p.id === itemId);
+        if (!item) return;
+
+        document.getElementById('modalCategoryBadge').textContent = item.number
+          ? `${item.categoryLabel} (${item.number})`
+          : item.categoryLabel;
+        document.getElementById('modalIconBox').innerHTML = `<i class="${item.icon || 'fa-solid fa-file-code'}"></i>`;
+        document.getElementById('modalTitle').textContent = item.title;
+        document.getElementById('modalTagline').textContent = item.tagline;
+        document.getElementById('modalDescription').textContent = item.summary;
+
+        document.getElementById('modalFeatures').innerHTML = item.features.map(f => `
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-circle-check text-indigo-500 mt-1 text-xs"></i>
+            <span>${f}</span>
+          </li>
+        `).join('');
+
+        document.getElementById('modalTech').innerHTML = item.tech.map(t => `
+          <span class="px-3 py-1 rounded-xl text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20">
+            ${t}
+          </span>
+        `).join('');
+
+        // External URL button if custom assignment has a link
+        const extLinkBtn = document.getElementById('modalExternalLink');
+        if (item.url) {
+          extLinkBtn.href = item.url;
+          document.getElementById('modalExternalLinkText').textContent = item.type === 'featured' ? 'View on GitHub' : 'Open Assignment Link';
+          extLinkBtn.classList.remove('hidden');
+        } else {
+          extLinkBtn.classList.add('hidden');
+        }
+        const liveBtn = document.getElementById('modalLiveLink');
+        if (item.liveUrl) {
+          liveBtn.href = item.liveUrl;
+          liveBtn.classList.remove('hidden');
+        } else {
+          liveBtn.classList.add('hidden');
+        }
+
+        // Render interactive demo if available
+        renderAssignmentDemo(item.demoType);
+
+        projectModal.classList.remove('hidden');
+        projectModal.classList.add('flex');
+      }
+
+      const hideProjectModal = () => {
+        projectModal.classList.add('hidden');
+        projectModal.classList.remove('flex');
+      };
+
+      closeProjectModalBtn.addEventListener('click', hideProjectModal);
+      modalCloseFooterBtn.addEventListener('click', hideProjectModal);
+      modalInquireBtn.addEventListener('click', hideProjectModal);
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) hideProjectModal();
+      });
+
+      // -------------------------------------------------------
+      // Add New Web Assignment Modal Logic
+      // -------------------------------------------------------
+      const addAssignmentModal = document.getElementById('addAssignmentModal');
+      const openAddAssignmentBtn = document.getElementById('openAddAssignmentBtn');
+      const closeAddAssignmentModal = document.getElementById('closeAddAssignmentModal');
+      const cancelAddAssignmentBtn = document.getElementById('cancelAddAssignmentBtn');
+      const addAssignmentForm = document.getElementById('addAssignmentForm');
+
+      const hideAddAssignmentModal = () => {
+        addAssignmentModal.classList.add('hidden');
+        addAssignmentModal.classList.remove('flex');
+      };
+
+      openAddAssignmentBtn.addEventListener('click', () => {
+        addAssignmentModal.classList.remove('hidden');
+        addAssignmentModal.classList.add('flex');
+      });
+
+      closeAddAssignmentModal.addEventListener('click', hideAddAssignmentModal);
+      cancelAddAssignmentBtn.addEventListener('click', hideAddAssignmentModal);
+      addAssignmentModal.addEventListener('click', (e) => {
+        if (e.target === addAssignmentModal) hideAddAssignmentModal();
+      });
+
+      addAssignmentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('assignTitle').value.trim();
+        const techRaw = document.getElementById('assignTech').value.trim();
+        const summary = document.getElementById('assignSummary').value.trim();
+        const url = document.getElementById('assignUrl').value.trim();
+
+        const techArray = techRaw.split(',').map(t => t.trim()).filter(Boolean);
+        const nextNum = getAllAssignments().length + 1;
+
+        const newAssign = {
+          id: 'custom-assign-' + Date.now(),
+          type: 'assignment',
+          isCustom: true,
+          number: `Assignment ${String(nextNum).padStart(2, '0')}`,
+          title,
+          tagline: 'College Web Development Practical Submission',
+          categoryLabel: 'Web Assignment',
+          icon: 'fa-solid fa-file-code',
+          summary,
+          features: [
+            'Implemented according to MCA/BCA Web Engineering curriculum specifications.',
+            `Built using ${techArray.join(', ')} with responsive layout and clean code structure.`
+          ],
+          tech: techArray.length ? techArray : ['HTML', 'CSS', 'JS'],
+          url: url || ''
+        };
+
+        customAssignments.push(newAssign);
+        localStorage.setItem(CUSTOM_ASSIGNMENTS_KEY, JSON.stringify(customAssignments));
+        addAssignmentForm.reset();
+        hideAddAssignmentModal();
+        renderProjectsAndAssignments(currentFilter);
+        showToast('Web assignment added to your portfolio!');
+      });
+
+      // -------------------------------------------------------
+      // 4. Resume Preview & Print Modal
+      // -------------------------------------------------------
+      const resumeModal = document.getElementById('resumeModal');
+      const resumeTriggers = [
+        document.getElementById('resumeQuickBtn'),
+        document.getElementById('mobileResumeBtn'),
+        document.getElementById('heroResumeBtn'),
+        document.getElementById('downloadResumeBtn')
+      ];
+
+      resumeTriggers.forEach(btn => {
+        if (btn) {
+          btn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            resumeModal.classList.remove('hidden');
+            resumeModal.classList.add('flex');
+          });
+        }
+      });
+
+      document.getElementById('closeResumeModal').addEventListener('click', () => {
+        resumeModal.classList.add('hidden');
+        resumeModal.classList.remove('flex');
+      });
+
+      resumeModal.addEventListener('click', (e) => {
+        if (e.target === resumeModal) {
+          resumeModal.classList.add('hidden');
+          resumeModal.classList.remove('flex');
+        }
+      });
+
+      document.getElementById('printResumeAction').addEventListener('click', () => {
+        showToast('Opening print dialog to save PDF resume...');
+        setTimeout(() => window.print(), 400);
+      });
+
+      // -------------------------------------------------------
+      // 5. Toast Helper, Copy Email & Contact Form Submission
+      // -------------------------------------------------------
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      let toastTimeout;
+
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('translate-y-24', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3500);
+      }
+
+      // Copy Email using execCommand fallback
+      document.getElementById('copyEmailBtn').addEventListener('click', () => {
+        const email = document.getElementById('emailText').textContent.trim();
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showToast('Email copied to clipboard!');
+        } catch (err) {
+          showToast('Email: ' + email);
+        }
+        document.body.removeChild(tempInput);
+      });
+
+      // Contact Form Submission Feedback
+      document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        showToast(`Thanks ${name}! Your message has been received.`);
+        e.target.reset();
+      });
+
+      // Close modals with Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          hideProjectModal();
+          hideAddAssignmentModal();
+          resumeModal.classList.add('hidden');
+          resumeModal.classList.remove('flex');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
